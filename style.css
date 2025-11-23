@@ -711,3 +711,15 @@ body {
         padding: 40px 20px;
     }
 }
+@media (max-width: 768px) {
+    .quote-btn {
+        transform: translateX(-50px);
+    }
+}
+
+
+@media (max-width: 900px) {
+    .quote-btn {
+        transform: translateX(-50px);
+    }
+}
