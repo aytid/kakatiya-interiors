@@ -713,13 +713,13 @@ body {
 }
 @media (max-width: 768px) {
     .quote-btn {
-        transform: translateX(-50px);
+        display: none;
     }
 }
 
 
 @media (max-width: 900px) {
     .quote-btn {
-        transform: translateX(-50px);
+        display: none;
     }
 }
