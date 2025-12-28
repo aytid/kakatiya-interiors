@@ -724,6 +724,11 @@ body {
     height: auto;
     display: block;
 }
+@media (max-width: 768px) {
+    .loader-logo {
+        max-width: 70%;
+    }
+}
 
 
 .loader-logo {
