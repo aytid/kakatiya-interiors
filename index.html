@@ -8,7 +8,13 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap" rel="stylesheet"> -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
     <link rel="icon" type="image/png" href="kakatiya-browser-icon.png">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -21,14 +27,13 @@
 
     <header class="header">
 
+        <img style="height: 70px;" src="kakatiya-interiors-new-logo.png" alt="">
+
         <div class="hamburger" id="hamburger">
             <span></span>
             <span></span>
             <span></span>
         </div>
-
-        <!-- <div class="logo">Kakatiya Interiors</div> -->
-        <img style="height: 70px;width: 70px;" src="kakatiya-logo.png" alt="">
 
         <nav class="nav" id="mobileNav">
             <a href="#home">Home</a>
@@ -37,17 +42,15 @@
             <a href="#contact">Contact</a>
         </nav>
 
-        <a class="quote-btn" href="#contact">Get Quote</a>
+        <a class="quote-btn" href="#contact">Free Consultation</a>
     </header>
 
     <section id="home" class="hero fade-up">
         <div class="hero-content">
-            <h1>Kakatiya Interiors</h1>
-            <h2>Crafting Luxurious Spaces</h2>
-            <h3>
-                Specializing in residential, commercial, modern, luxury, and minimalistic designs
-                that transform spaces into extraordinary experiences.
-            </h3>
+            <h1 style="font-size: 40px;">Kakatiya Interiors</h1>
+            <h2 style="font-weight: 100;">Your space, Our Passion</h2><br>
+            <p>Specializing in residential, commercial, modern, luxury, and minimalistic designs
+                that transform spaces into extraordinary experiences.</p>
             <a href="#portfolio" class="btn-primary">Explore Our Work</a>
         </div>
     </section>
@@ -71,61 +74,36 @@
     </section>
 
     <section class="section services-carousel fade-up">
-
-        <h2 class="section-title">Our Services</h2>
-        <p class="section-subtitle">
-            We provide end-to-end interior design solutions, combining creativity,
-            technical expertise, and flawless execution.
-        </p>
+        <h2 class="section-title">End-to-End Interiors Delivered Seamlessly</h2>
+        <p class="section-subtitle">We provide end-to-end interior design solutions.</p>
 
         <div class="carousel-wrapper services-wrapper">
-
             <button class="carousel-btn prev services-prev">&#10094;</button>
-
             <div class="carousel-track services-track">
-
-                <div class="carousel-item service-card">
-                    <span>🏡</span>
-                    <h3>Residential Design</h3>
-                    <p>Thoughtfully designed homes that balance comfort, aesthetics, and functionality.</p>
+                <div class="carousel-item">
+                    <img style="height: 200px;" src="living-room.jpg" alt="Commercial">
+                    <h4>Commercial Spaces</h4>
                 </div>
-
-                <div class="carousel-item service-card">
-                    <span>🏢</span>
-                    <h3>Commercial Spaces</h3>
-                    <p>Professional interiors that enhance productivity and brand presence.</p>
+                <div class="carousel-item">
+                    <img style="height: 200px;" src="bedroom.jpg" alt="3D">
+                    <h4>3D Visualization</h4>
                 </div>
-
-                <div class="carousel-item service-card">
-                    <span>🎨</span>
-                    <h3>3D Visualization</h3>
-                    <p>High-quality 3D views to visualize the space before execution begins.</p>
+                <div class="carousel-item">
+                    <img style="height: 200px;" src="kitchen.jpg" alt="Custom">
+                    <h4>Custom Furniture</h4>
                 </div>
-
-                <div class="carousel-item service-card">
-                    <span>🛋️</span>
-                    <h3>Custom Furniture</h3>
-                    <p>Bespoke furniture designed to fit your space and lifestyle perfectly.</p>
+                <div class="carousel-item">
+                    <img style="height: 200px;" src="pooja.jpg" alt="Space">
+                    <h4>Space Planning</h4>
                 </div>
-
-                <div class="carousel-item service-card">
-                    <span>📐</span>
-                    <h3>Space Planning</h3>
-                    <p>Optimized layouts that ensure maximum usability and visual harmony.</p>
+                <div class="carousel-item">
+                    <img style="height: 200px;" src="wardrobe.jpg" alt="Project">
+                    <h4>Project Management</h4>
                 </div>
-
-                <div class="carousel-item service-card">
-                    <span>📋</span>
-                    <h3>Project Management</h3>
-                    <p>Complete project coordination ensuring quality, timelines, and transparency.</p>
-                </div>
-
             </div>
-
             <button class="carousel-btn next services-next">&#10095;</button>
-
+            <div class="carousel-dots services-dots"></div>
         </div>
-
     </section>
 
 
@@ -133,100 +111,99 @@
 
         <h2>Technical Expertise</h2>
         <p class="skills-intro">
-            We leverage industry-standard design and visualization tools to deliver
-            accurate planning, realistic visuals, and high-quality execution.
+            We use industry-standard tools to ensure precise planning,
+            realistic visuals, and quality execution.
         </p>
 
-        <div class="skills-grid">
+        <div class="carousel-wrapper skills-wrapper">
 
-            <div class="skill-card">
-                <img src="autocad.png" alt="AutoCAD">
-                <h4>AutoCAD (2D & 3D)</h4>
-                <p>Detailed drawings, layouts, and precise technical documentation.</p>
+            <button class="carousel-btn prev skills-prev">&#10094;</button>
+
+            <div class="carousel-track skills-track">
+
+                <div class="skill-card carousel-item">
+                    <img src="autocad.png" alt="AutoCAD">
+                    <h4>Residential Design</h4>
+                    <p>Thoughtfully designed homes that balance comfort, aesthetics, and functionality.</p>
+                </div>
+
+                <div class="skill-card carousel-item">
+                    <img src="sketchup.png" alt="SketchUp">
+                    <h4>Commercial Spaces</h4>
+                    <p>Professional interiors that enhance productivity and brand presence.</p>
+                </div>
+
+                <div class="skill-card carousel-item">
+                    <img src="revit-3d-architecture.png" alt="Revit Architecture">
+                    <h4>3D Visualization</h4>
+                    <p>High-quality 3D views to visualize the space before execution begins.</p>
+                </div>
+
+                <div class="skill-card carousel-item">
+                    <img src="v-rayi.jpg" alt="V-Ray">
+                    <h4>Custom Furniture</h4>
+                    <p>Bespoke furniture designed to fit your space and lifestyle perfectly.</p>
+                </div>
+
+                <div class="skill-card carousel-item">
+                    <img src="ps.png" alt="Photoshop">
+                    <h4>Space Planning</h4>
+                    <p>Optimized layouts that ensure maximum usability and visual harmony.</p>
+                </div>
+
+                <div class="skill-card carousel-item">
+                    <img src="3ds-logo.png" alt="3ds Max">
+                    <h4>Project Management</h4>
+                    <p>3D modeling, lighting, and scene setup.</p>
+                </div>
+
+                <div class="skill-card carousel-item">
+                    <img src="corona-logo.png" alt="Corona Renderer">
+                    <h4>Corona</h4>
+                    <p>Photorealistic rendering with realistic lighting and materials.</p>
+                </div>
+
             </div>
 
-            <div class="skill-card">
-                <img src="sketchup.png" alt="SketchUp">
-                <h4>SketchUp</h4>
-                <p>Concept modeling and spatial visualization for quick design iterations.</p>
-            </div>
+            <button class="carousel-btn next skills-next">&#10095;</button>
 
-            <div class="skill-card">
-                <img src="revit-3d-architecture.png" alt="Revit Architecture">
-                <h4>Revit Architecture</h4>
-                <p>BIM-based architectural planning for accuracy and coordination.</p>
-            </div>
-
-            <div class="skill-card">
-                <img src="v-rayi.jpg" alt="V-Ray">
-                <h4>V-Ray</h4>
-                <p>Photorealistic rendering with advanced lighting and material detailing.</p>
-            </div>
-
-            <div class="skill-card">
-                <img src="ps.png" alt="Photoshop">
-                <h4>Adobe Photoshop</h4>
-                <p>Post-processing, mood boards, and visual enhancements.</p>
-            </div>
+            <div class="carousel-dots skills-dots"></div>
 
         </div>
     </section>
 
     <section id="portfolio" class="section what-we-do fade-up">
         <h2 class="section-title">What We Do</h2>
-        <p class="section-subtitle">
-            From concept to completion, we offer comprehensive interior design solutions
-            tailored to your lifestyle, space, and budget.
-        </p>
+        <h2>Modular Kitchen Designs</h2>
 
         <div class="carousel-wrapper works-wrapper">
-
-
-            <button class="carousel-btn prev" aria-label="Previous">&#10094;</button>
-
+            <button class="carousel-btn prev works-prev">&#10094;</button>
             <div class="carousel-track works-track">
-
-                <div class="carousel-item">
-                    <img src="living-room.jpg" alt="Living Room Interiors">
-                    <h4>Living Room Interiors</h4>
+                <div class="carousel-item"><img style="height: 200px;" src="living-room.jpg" alt="">
+                    <h4>Living Room</h4>
                 </div>
-
-                <div class="carousel-item">
-                    <img src="bedroom.jpg" alt="Bedroom Interiors">
-                    <h4>Bedroom Interiors</h4>
+                <div class="carousel-item"><img style="height: 200px;" src="bedroom.jpg" alt="">
+                    <h4>Bedroom</h4>
                 </div>
-
-                <div class="carousel-item">
-                    <img src="kitchen.jpg" alt="Modular Kitchen">
-                    <h4>Modular Kitchens</h4>
+                <div class="carousel-item"><img style="height: 200px;" src="kitchen.jpg" alt="">
+                    <h4>Kitchens</h4>
                 </div>
-
-                <div class="carousel-item">
-                    <img src="pooja.jpg" alt="Pooja Room Design">
+                <div class="carousel-item"><img style="height: 200px;"  src="pooja.jpg" alt="">
                     <h4>Pooja Units</h4>
                 </div>
-
-                <div class="carousel-item">
-                    <img src="wardrobe.jpg" alt="Wardrobe Design">
+                <div class="carousel-item"><img style="height: 200px;" src="wardrobe.jpg" alt="">
                     <h4>Wardrobes</h4>
                 </div>
-
-                <div class="carousel-item">
-                    <img src="2d-drawing.png" alt="2D Drawings">
-                    <h4>2D & 3D Drawings</h4>
+                <div class="carousel-item"><img style="height: 200px;" src="2d-drawing.png" alt="">
+                    <h4>Drawings</h4>
                 </div>
-
-                <div class="carousel-item">
-                    <img src="elevation.png" alt="Elevation Design">
-                    <h4>Elevation Design</h4>
+                <div class="carousel-item"><img style="height: 200px;" src="elevation.png" alt="">
+                    <h4>Elevation</h4>
                 </div>
-
             </div>
-
-            <button class="carousel-btn next" aria-label="Next">&#10095;</button>
-
+            <button class="carousel-btn next works-next">&#10095;</button>
+            <div class="carousel-dots works-dots"></div>
         </div>
-
     </section>
 
 
@@ -247,7 +224,6 @@
         </div>
 
     </section>
-
 
     <!-- FOOTER -->
     <footer class="footer">
@@ -300,12 +276,18 @@
             </div>
 
             <div class="contact-box">
-                <span class="contact-icon"><img src="instagram.png" alt=""></span>
-                <div>
-                    <h4>Instagram</h4>
-                    <p>@kakatiya_interiors</p>
-                </div>
+                <a href="https://www.instagram.com/kakatiya_interiors?igsh=MWhjMzJzaXg3Zmlxbg==" target="_blank"
+                    class="contact-link">
+                    <span class="contact-icon">
+                        <img style="margin-right:10px" src="instagram.png" alt="Instagram">
+                    </span>
+                    <div>
+                        <h4>Instagram</h4>
+                        <p>@kakatiya_interiors</p>
+                    </div>
+                </a>
             </div>
+
 
             <div class="contact-box">
                 <span class="contact-icon"><img src="email.png" alt=""></span>

@@ -1,137 +1,115 @@
-// Fade-up scroll animation
 const fadeElements = document.querySelectorAll('.fade-up');
 
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-        }
-    });
-}, { threshold: 0.2 });
+const observer = new IntersectionObserver(
+    entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    },
+    { threshold: 0.2 }
+);
 
 fadeElements.forEach(el => observer.observe(el));
 
-/* Loader */
 window.addEventListener("load", () => {
     setTimeout(() => {
-        document.getElementById("page-loader").classList.add("hide");
-    }, 2000);
+        const loader = document.getElementById("page-loader");
+        if (loader) loader.classList.add("hide");
+    }, 500);
 });
 
-/* Hamburger */
 const hamburger = document.getElementById("hamburger");
 const nav = document.getElementById("mobileNav");
 
-hamburger.addEventListener("click", () => {
-    nav.classList.toggle("active");
-});
-
-/* Auto-close on link click */
-document.querySelectorAll('#mobileNav a').forEach(link => {
-    link.addEventListener('click', () => {
-        nav.classList.remove('active');
+if (hamburger && nav) {
+    hamburger.addEventListener("click", () => {
+        nav.classList.toggle("active");
     });
-});
 
-
-const servicesWrapper = document.querySelector('.services-wrapper');
-const servicesTrack = document.querySelector('.services-track');
-const servicesItems = document.querySelectorAll('.services-track .carousel-item');
-const servicesPrev = document.querySelector('.services-prev');
-const servicesNext = document.querySelector('.services-next');
-
-const servicesItemWidth = servicesItems[0].offsetWidth + 24;
-let servicesIndex = 0;
-
-function visibleServices() {
-    return Math.floor(servicesWrapper.offsetWidth / servicesItemWidth);
+    document.querySelectorAll('#mobileNav a').forEach(link => {
+        link.addEventListener('click', () => {
+            nav.classList.remove('active');
+        });
+    });
 }
 
-function maxServicesIndex() {
-    return servicesItems.length - visibleServices();
+function setupCarousel({ wrapper, track, item, prev, next, dots, gap = 24 }) {
+    const wrapperEl = document.querySelector(wrapper);
+    const trackEl = document.querySelector(track);
+    const items = trackEl ? trackEl.querySelectorAll(item) : [];
+    const prevBtn = document.querySelector(prev);
+    const nextBtn = document.querySelector(next);
+    const dotsEl = document.querySelector(dots);
+
+    if (!wrapperEl || !trackEl || items.length === 0) return;
+
+    let index = 0;
+    const itemWidth = () => items[0].offsetWidth + gap;
+
+    if (nextBtn) {
+        nextBtn.addEventListener("click", () => {
+            index = (index + 1) % items.length;
+            trackEl.style.transform = `translateX(-${index * itemWidth()}px)`;
+        });
+    }
+
+    if (prevBtn) {
+        prevBtn.addEventListener("click", () => {
+            index = (index - 1 + items.length) % items.length;
+            trackEl.style.transform = `translateX(-${index * itemWidth()}px)`;
+        });
+    }
+
+    if (dotsEl) {
+        dotsEl.innerHTML = "";
+        items.forEach((_, i) => {
+            const dot = document.createElement("span");
+            if (i === 0) dot.classList.add("active");
+            dotsEl.appendChild(dot);
+        });
+
+        const dotsArr = dotsEl.querySelectorAll("span");
+
+        trackEl.addEventListener("scroll", () => {
+            const scrollIndex = Math.round(trackEl.scrollLeft / itemWidth());
+            dotsArr.forEach(d => d.classList.remove("active"));
+            if (dotsArr[scrollIndex]) dotsArr[scrollIndex].classList.add("active");
+        });
+    }
+
+    window.addEventListener("resize", () => {
+        trackEl.style.transform = `translateX(-${index * itemWidth()}px)`;
+    });
 }
 
-function moveServices() {
-    servicesTrack.style.transform =
-        `translateX(-${servicesIndex * servicesItemWidth}px)`;
-}
-
-servicesNext.addEventListener('click', () => {
-    servicesIndex++;
-    if (servicesIndex > maxServicesIndex()) servicesIndex = 0;
-    moveServices();
+setupCarousel({
+    wrapper: ".services-wrapper",
+    track: ".services-track",
+    item: ".carousel-item",
+    prev: ".services-prev",
+    next: ".services-next",
+    dots: ".services-dots",
+    gap: 24
 });
 
-servicesPrev.addEventListener('click', () => {
-    servicesIndex--;
-    if (servicesIndex < 0) servicesIndex = maxServicesIndex();
-    moveServices();
+setupCarousel({
+    wrapper: ".works-wrapper",
+    track: ".works-track",
+    item: ".carousel-item",
+    prev: ".works-wrapper .prev",
+    next: ".works-wrapper .next",
+    dots: ".works-dots",
+    gap: 24
 });
 
-let servicesAuto = setInterval(() => {
-    servicesIndex++;
-    if (servicesIndex > maxServicesIndex()) servicesIndex = 0;
-    moveServices();
-}, 2500);
-
-servicesTrack.addEventListener('mouseenter', () => clearInterval(servicesAuto));
-servicesTrack.addEventListener('mouseleave', () => {
-    servicesAuto = setInterval(() => {
-        servicesIndex++;
-        if (servicesIndex > maxServicesIndex()) servicesIndex = 0;
-        moveServices();
-    }, 2500);
+setupCarousel({
+    wrapper: ".skills-wrapper",
+    track: ".skills-track",
+    item: ".skill-card",
+    prev: ".skills-prev",
+    next: ".skills-next",
+    dots: ".skills-dots",
+    gap: 28
 });
-
-window.addEventListener('resize', moveServices);
-
-const worksWrapper = document.querySelector('.works-wrapper');
-const worksTrack = document.querySelector('.works-track');
-const worksItems = worksTrack.querySelectorAll('.carousel-item');
-const worksPrev = worksWrapper.querySelector('.carousel-btn.prev');
-const worksNext = worksWrapper.querySelector('.carousel-btn.next');
-
-const worksItemWidth = worksItems[0].offsetWidth + 24;
-let worksIndex = 0;
-
-function visibleWorks() {
-    return Math.floor(worksWrapper.offsetWidth / worksItemWidth);
-}
-
-function maxWorksIndex() {
-    return worksItems.length - visibleWorks();
-}
-
-function moveWorks() {
-    worksTrack.style.transform =
-        `translateX(-${worksIndex * worksItemWidth}px)`;
-}
-
-worksNext.addEventListener('click', () => {
-    worksIndex++;
-    if (worksIndex > maxWorksIndex()) worksIndex = 0;
-    moveWorks();
-});
-
-worksPrev.addEventListener('click', () => {
-    worksIndex--;
-    if (worksIndex < 0) worksIndex = maxWorksIndex();
-    moveWorks();
-});
-
-let worksAuto = setInterval(() => {
-    worksIndex++;
-    if (worksIndex > maxWorksIndex()) worksIndex = 0;
-    moveWorks();
-}, 2500);
-
-worksTrack.addEventListener('mouseenter', () => clearInterval(worksAuto));
-worksTrack.addEventListener('mouseleave', () => {
-    worksAuto = setInterval(() => {
-        worksIndex++;
-        if (worksIndex > maxWorksIndex()) worksIndex = 0;
-        moveWorks();
-    }, 2500);
-});
-
-window.addEventListener('resize', moveWorks);
