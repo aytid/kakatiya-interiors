@@ -1048,3 +1048,14 @@ body {
 .tv-wrapper .carousel-item:hover img {
     transform: scale(1.08);
 }
+
+img {
+    -webkit-user-drag: none;
+    user-drag: none;
+    pointer-events: none;
+}
+
+body {
+    -webkit-user-select: none;
+    user-select: none;
+}
