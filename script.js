@@ -155,3 +155,5 @@ setupCarousel({
     next: ".tv-next",
     dots: ".tv-dots"
 });
+
+document.addEventListener('contextmenu', (event) => event.preventDefault());
