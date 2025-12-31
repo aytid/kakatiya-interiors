@@ -156,8 +156,52 @@ setupCarousel({
     dots: ".tv-dots"
 });
 
+setupCarousel({
+    wrapper: ".wardrobe-wrapper",
+    track: ".wardrobe-track",
+    item: ".carousel-item",
+    prev: ".wardrobe-prev",
+    next: ".wardrobe-next",
+    dots: ".wardrobe-dots"
+});
 
-document.addEventListener('contextmenu', (event) => event.preventDefault());
+setupCarousel({
+    wrapper: ".pooja-wrapper",
+    track: ".pooja-track",
+    item: ".carousel-item",
+    prev: ".pooja-prev",
+    next: ".pooja-next",
+    dots: ".pooja-dots"
+});
+
+setupCarousel({
+    wrapper: ".bedroom-wrapper",
+    track: ".bedroom-track",
+    item: ".carousel-item",
+    prev: ".bedroom-prev",
+    next: ".bedroom-next",
+    dots: ".bedroom-dots"
+});
+
+setupCarousel({
+    wrapper: ".elevation-wrapper",
+    track: ".elevation-track",
+    item: ".carousel-item",
+    prev: ".elevation-prev",
+    next: ".elevation-next",
+    dots: ".elevation-dots"
+});
+
+setupCarousel({
+    wrapper: ".plans-wrapper",
+    track: ".plans-track",
+    item: ".carousel-item",
+    prev: ".plans-prev",
+    next: ".plans-next",
+    dots: ".plans-dots"
+});
+
+//document.addEventListener('contextmenu', (event) => event.preventDefault());
 
 document.addEventListener('dragstart', event => {
     if (event.target.tagName === 'IMG') {

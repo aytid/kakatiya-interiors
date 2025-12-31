@@ -296,6 +296,10 @@ body {
     background-color: burlywood;
 }
 
+#portfolio h2{
+    margin-top: 40px;
+}
+
 .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -1029,8 +1033,13 @@ body {
 }
 
 .works-wrapper .carousel-item,
-.tv-wrapper .carousel-item {
-    width: 320px;
+.tv-wrapper .carousel-item,
+.wardrobe-wrapper .carousel-item,
+.pooja-wrapper .carousel-item,
+.bedroom-wrapper .carousel-item,
+.elevation-wrapper .carousel-item,
+.plans-wrapper .carousel-item  {
+    width: 250px;
     height: 240px;
     flex: 0 0 auto;
     overflow: hidden;
@@ -1039,7 +1048,12 @@ body {
 }
 
 .works-wrapper .carousel-item img,
-.tv-wrapper .carousel-item img {
+.tv-wrapper .carousel-item img,
+.wardrobe-wrapper .carousel-item img,
+.pooja-wrapper .carousel-item img,
+.bedroom-wrapper .carousel-item img,
+.elevation-wrapper .carousel-item img,
+.plans-wrapper .carousel-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -1049,7 +1063,12 @@ body {
 }
 
 .works-wrapper .carousel-item:hover img,
-.tv-wrapper .carousel-item:hover img {
+.tv-wrapper .carousel-item:hover img,
+.wardrobe-wrapper .carousel-item:hover img,
+.pooja-wrapper .carousel-item:hover img,
+.bedroom-wrapper .carousel-item:hover img,
+.elevation-wrapper .carousel-item:hover img,
+.plans-wrapper .carousel-item:hover img  {
     transform: scale(1.08);
 }
 
