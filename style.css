@@ -699,7 +699,7 @@ body {
     }
 
     .section {
-        padding: 60px 20px;
+        padding: 60px 10px;
     }
 
     .section h2 {
@@ -1077,11 +1077,6 @@ img {
     user-drag: none;
     pointer-events: none;
 }
-
-
-
-
-
 
 
 
