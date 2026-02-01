@@ -1,3 +1,6 @@
+document.addEventListener('contextmenu', (e) => {
+    e.preventDefault();
+});
 const fadeElements = document.querySelectorAll('.fade-up');
 const observer = new IntersectionObserver(
     entries => {
